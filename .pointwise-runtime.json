@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "kind": "cli",
+  "entrypoint": "intervalrules/cli.py",
+  "python": "/usr/bin/python3",
+  "isolated_flag": "-I",
+  "setup": [
+    ["/usr/bin/python3", "-I", "intervalrules/cli.py", "setup"]
+  ],
+  "verify": [
+    ["/usr/bin/python3", "-I", "intervalrules/cli.py", "verify"]
+  ],
+  "demo": [
+    ["/usr/bin/python3", "-I", "intervalrules/cli.py", "demo"]
+  ],
+  "run_example": [
+    ["/usr/bin/python3", "-I", "intervalrules/cli.py", "run",
+     "--program", "examples/program.json",
+     "--changes", "examples/changes.json",
+     "--read", "R"]
+  ],
+  "artifacts": {
+    "package": "intervalrules",
+    "example_program": "examples/program.json",
+    "example_changes": "examples/changes.json"
+  },
+  "notes": "All argv entries are arrays of strings. Run from the repository root so the intervalrules package is importable; -I keeps the interpreter isolated."
+}
